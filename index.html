@@ -264,6 +264,8 @@
 
 			var SCOPES = ['https://www.googleapis.com/auth/spreadsheets',
 						  'https://www.googleapis.com/auth/userinfo.email'];
+
+			var authorized = false;
 			/**
 			 * Check if current user has authorized this application.
 			 */
@@ -282,8 +284,10 @@
 			 */
 			function handleAuthResult(authResult) {
 				if (authResult && !authResult.error) {
+					authorized = true;
 				} else {
 					console.log(authResult);
+					authorized = false;
 				}
 			}
 
@@ -332,7 +336,7 @@
 			function submitForm(e) {
 				e.preventDefault();
 				
-				if(gapi.client.request) {
+				if(authorized) {
 					sendData();
 					e.target.reset();
 				}
