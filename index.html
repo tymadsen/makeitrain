@@ -321,13 +321,13 @@
 
 				op.execute(function(resp){ 
 					console.log(resp);
-					console.log(resp.response.result);
+					console.log(resp.response);
 
 					//TODO: do something with response
 					// if successful change sign up for to a thank you note
 					// else try again
 
-					if(resp.response.result.message) {
+					if(!resp.error && resp.response.result.message) {
 						$("#signup-reponse").html('<h2>' + resp.response.result.message + '</h2>');
 					}
 				});
