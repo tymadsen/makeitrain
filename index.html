@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="">
-		<meta name="author" content="">
-		<link rel="icon" href="favicon.ico">
+<head>
 
-		<title>GurglGas</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="icon" href="favicon.ico">
 
-		<!-- Bootstrap core CSS -->
-		<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<title>GurglGas</title>
 
-		<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-		<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-		<script src="lib/bootstrap/assets/js/ie-emulation-modes-warning.js"></script>
+	<!-- Bootstrap core CSS -->
+	<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+	<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+	<script src="lib/bootstrap/assets/js/ie-emulation-modes-warning.js"></script>
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -34,7 +34,7 @@
 	================================================== -->
 	<body style="font-family:'Palanquin Dark'">
 		<div class="navbar-wrapper">
-			<div class="container-fluid">
+			<div class="container">
 
 				<header class="navbar navbar-inverse navbar-fixed-top">
 					<div class="container">
@@ -79,9 +79,7 @@
 		<div class="carousel slide" style="margin-bottom: 0px; height: 100%;" data-ride="carousel">
 			<div class="carousel-inner" role="listbox">
 				<div class="item active" style="height: 100vh;">
-						<img class="img-responsive" src="img/refuel.jpg" alt="First slide" style=" min-height: 100%; min-width: 100%; position: absolute;">
-					<div>
-					</div>
+					<img class="img-responsive" src="img/refuel.jpg" alt="First slide" style=" min-height: 100%; min-width: 100%; position: absolute;">
 					<div class="container">
 						<div class="carousel-caption" style="top: 10px">
 							<h1>Fueling your car for you!</h1>
@@ -91,13 +89,13 @@
 									<div class="form-group">
 										<label for="inputEmail" class="sr-only">Email address</label>
 										<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-									<div class="form-group">
-									</div>
+										<div class="form-group">
+										</div>
 										<label for="inputZip" class="sr-only">Zip Code</label>
 										<input type="text" id="inputZip" class="form-control" placeholder="Zip Code" required>
 									</div>
 									<div class="form-group">
-											<label class="control-label">How did you hear about us:</label>
+										<label class="control-label">How did you hear about us:</label>
 										<p>
 											<select class="form-control" id="inputSrc" required>
 												<option value=""></option>
@@ -122,72 +120,80 @@
 			</div>
 		</div><!-- /.carousel -->
 		
-		<!-- Carousel
-		================================================== -->
-		<div id="myCarousel" class="carousel slide " data-ride="carousel" style="height: 100vh">
-			<!-- Indicators -->
-			<ol class="carousel-indicators">
-				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				<li data-target="#myCarousel" data-slide-to="1"></li>
-				<li data-target="#myCarousel" data-slide-to="2"></li>
-			</ol>
-			<div id="about" class="carousel-inner" role="listbox" style="height: 100%">
-				<div class="item active" style="height: 100%">
-						<!-- <img class="img-responsive" src="img/gasPump.png" alt="First slide" style="height: 500px"> -->
-					<div class="col-sm-8 col-sm-offset-2" style="background: url('img/gasPump.png') no-repeat center center; background-size: cover; height: 80%; margin-top: 20%;">
-						<div class="container" style="height: 100%">
-							<div class="carousel-caption">
-								<h1>Forget the pump!</h1>
-								<p>Let us make sure your ride is ready to go whenever you need it. No more hassle, no need to take time out to fill up your tank when you are in a rush or it is cold outside. Never worry about refueling again!</p>
-								<p><a class="btn btn-lg btn-primary" href="#" role="button">Learn More</a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="item" style="height: 100%">
-					<!-- <img class="img-responsive" src="img/gasTruck.png" alt="Second slide"> -->
-					
-					<!-- <div  style="background: url('img/gasTruck.png') no-repeat center center; height: 80%;"> -->
-					<!-- </div> -->
-					<div class="col-xs-12" style="background: url('img/gasTruck.png') no-repeat center center; background-size: cover; height: 80%; margin-top: 20%;">
-						<div class="container">
-							<div class="carousel-caption" >
-								<h1>We come to you!</h1>
-								<p>Wherever you are, we will come to you! So you really don't have to worry. You will just be pleasantly surprised to see you fuel guage at full when you get in your car. Whether you are shopping, at work, at home, or out on the town we have you covered!.</p>
-								<p><a class="btn btn-lg btn-primary" href="#" role="button">Learn More</a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="item" style="height: 100%">
-						<!-- <img class="img-responsive" src="img/phone.png" alt="Third slide" style="height: 500px"> -->
-					<!-- <div class="col-sm-8 col-sm-offset-2">
-					</div> -->
-					<div class="col-sm-8 col-sm-offset-2" style="background: url('img/phone.png') no-repeat center center; background-size: cover; height: 80%; margin-top: 20%;">
-						<div class="container">
-							<div class="carousel-caption">
-								<h1>Check out the App!</h1>
-								<p>Easily and intuitively manage your portfolio, see service history and manage payment options. If you ever just want your tank topped off, you can with the tap of a button. We will get you topped off and ready to go in no time at all!</p>
-								<p><a class="btn btn-lg btn-primary" href="#" role="button">iOS</a><a class="btn btn-lg btn-primary" href="#" role="button">Android</a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-				<span class="sr-only">Previous</span>
-			</a>
-			<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
-			</a>
-		</div><!-- /.carousel -->
-
+		
 
 		<!-- Marketing messaging and featurettes
 		================================================== -->
 		<!-- Wrap the rest of the page in another container to center all the content. -->
+
+		<div id="about" class="container marketing" style="padding-top: 100px">
+
+			<!-- Three columns of text below the carousel -->
+			<div class="row">
+				<div class="col-lg-4">
+					<img class="img-rounded" src="img/noGasPump.png" alt="Forget the pump" style="width: 140px; height: 140px;">
+					<h1>Forget the pump!</h1>
+					<p>Stop making trips to the gas station when you don't need to.</p>
+					<p><a class="btn btn-default" href="#feature-1" role="button">View details &raquo;</a></p>
+				</div><!-- /.col-lg-4 -->
+				<div class="col-lg-4">
+					<img class="img-rounded" src="img/gasTruck.png" alt="We come to you" style="width: 140px; height: 140px;">
+					<h1>We come to you!</h1>
+					<p>Let us know when and where you want your gas delivered, and then forget about it!</p>
+					<p><a class="btn btn-default" href="#feature-2" role="button">View details &raquo;</a></p>
+				</div><!-- /.col-lg-4 -->
+				<div class="col-lg-4">
+					<img class="img-rounded" src="img/phone.png" alt="Check out the App" style="width: 140px; height: 140px;">
+					<h1>Check out the App!</h1>
+					<p>Its free, and easy to use!</p>
+					<p><a class="btn btn-default" href="#feature-3" role="button">View details &raquo;</a></p>
+				</div><!-- /.col-lg-4 -->
+			</div><!-- /.row -->
+
+
+			<!-- START THE FEATURETTES -->
+
+			<hr class="featurette-divider">
+
+			<div id="feature-1" class="row featurette" style="padding-top: 50px">
+				<div class="col-md-7">
+					<h2 class="featurette-heading">Why go to the gas station when it can come to you? <span class="text-muted">Welcome to tomorrow.</span></h2>
+					<p class="lead">We all lead busy lives. We know that. You know that. So let GurglGas simplify one aspect of your life. No more inconvenient stops at the gas station late at night, when you are in a rush, or it is cold outside. Now you can stay focussed on getting everything else done without the hassle of refueling. Just leave it to us!</p>
+				</div>
+				<div class="col-md-5">
+					<img class="featurette-image img-responsive" src="img/noGasPump.png" alt="Forget the pump">
+				</div>
+			</div>
+
+			<hr class="featurette-divider">
+
+			<div id="feature-2" class="row featurette" style="padding-top: 50px">
+				<div class="col-md-5">
+					<img class="featurette-image img-responsive" src="img/gasTruck.png" alt="We deliver">
+				</div>
+				<div class="col-md-7">
+					<h2 class="featurette-heading">We deliver. <span class="text-muted">See for yourself.</span></h2>
+					<p class="lead">We will come to you, wherever you are. You set the time and place for normal deliveries, and we will be there. Have to run an errand? No worries! We have you covered and will come to you wherever you are, or postpone the delivery if need be. No matter what, you won't be held up by us, or the gas station!</p>
+				</div>
+			</div>
+
+			<hr class="featurette-divider">
+
+			<div id="feature-3" class="row featurette" style="padding-top: 50px">
+				<div class="col-md-7">
+					<h2 class="featurette-heading">Looking for an App? <span class="text-muted">Checkmate.</span></h2>
+					<p class="lead">We have that too. Check out our app for iOS or Android. Simple, sleek, intuitive. All the information you need at your fingertips! See everything from service history and schedule, billing preferences, current rates, and where a service truck is for on-demand delivery if you need a top-off. Its all there!</p>
+				</div>
+				<div class="col-md-5">
+					<img class="featurette-image img-responsive" src="img/phone.png" alt="Checkout the App">
+				</div>
+			</div>
+
+			<hr class="featurette-divider">
+
+			<!-- /END THE FEATURETTES -->
+
+		</div>
 
 		<div id="areas" class="container marketing">
 
@@ -255,65 +261,65 @@
 			var SCRIPT_ID = '1nvvvIAakuYuhNyLD66WAFxrFheliZY6F_fKxC246aOmgQohyeiAdILyz';
 
 			var SCOPES = ['https://www.googleapis.com/auth/spreadsheets',
-						  'https://www.googleapis.com/auth/userinfo.email'];
+			'https://www.googleapis.com/auth/userinfo.email'];
 
 			var authorized = false;
 			/**
 			 * Check if current user has authorized this application.
 			 */
-			function checkAuth() {
-				gapi.auth.authorize({
-					'client_id': CLIENT_ID,
-					'scope': SCOPES,
-					'immediate': true
-				}, handleAuthResult);
-			}
+			 function checkAuth() {
+			 	gapi.auth.authorize({
+			 		'client_id': CLIENT_ID,
+			 		'scope': SCOPES,
+			 		'immediate': true
+			 	}, handleAuthResult);
+			 }
 
 			/**
 			 * Handle response from authorization server.
 			 *
 			 * @param {Object} authResult Authorization result.
 			 */
-			function handleAuthResult(authResult) {
-				if (authResult && !authResult.error) {
-					authorized = true;
-				} else {
-					console.log(authResult);
-					authorized = false;
-				}
-			}
+			 function handleAuthResult(authResult) {
+			 	if (authResult && !authResult.error) {
+			 		authorized = true;
+			 	} else {
+			 		console.log(authResult);
+			 		authorized = false;
+			 	}
+			 }
 
-			$(document).ready(function() {
-				$('#signUpForm').submit(function(e) {
-					submitForm(e);
-				})
-			});
+			 $(document).ready(function() {
+			 	$('#signUpForm').submit(function(e) {
+			 		submitForm(e);
+			 	})
+			 });
 
-			function sendData() {
+			 function sendData() {
 
-				var email = document.getElementById("inputEmail").value;
-				var zip = document.getElementById("inputZip").value;
-				var src = document.getElementById("inputSrc").value;
+			 	var email = document.getElementById("inputEmail").value;
+			 	var zip = document.getElementById("inputZip").value;
+			 	var src = document.getElementById("inputSrc").value;
 
-				var request = {
-					'function': 'saveData',
-					'parameters': [
-						email,
-						zip,
-						src
-					]
-				};
+			 	var request = {
+			 		'function': 'saveData',
+			 		'parameters': [
+			 		email,
+			 		zip,
+			 		src
+			 		]
+			 	};
 
-				var op = gapi.client.request({
-					'root': 'https://script.googleapis.com',
-					'path': 'v1/scripts/' + SCRIPT_ID + ':run',
-					'method': 'POST',
-					'body': request
-				});
+			 	var op = gapi.client.request({
+			 		'root': 'https://script.googleapis.com',
+			 		'path': 'v1/scripts/' + SCRIPT_ID + ':run',
+			 		'method': 'POST',
+			 		'body': request
+			 	});
 
-				op.execute(function(resp){ 
-					console.log(resp);
-					console.log(resp.response);
+			 	op.execute(function(resp){ 
+			 		console.log(resp);
+			 		console.log(resp.response);
 
 					//TODO: do something with response
 					// if successful change sign up for to a thank you note
@@ -323,31 +329,31 @@
 						$("#signup-reponse").html('<h2>' + resp.response.result.message + '</h2>');
 					}
 				});
-			}
+			 }
 
-			function submitForm(e) {
-				e.preventDefault();
-				
-				if(authorized) {
-					sendData();
-					e.target.reset();
-				}
-				else {
-					gapi.auth.authorize({
-						client_id: CLIENT_ID,
-						scope: SCOPES,
-						immediate: false
-					}, 
-					function(authResult) {
-						if(authResult && !authResult.error) {
-							sendData();
-							e.target.reset();
-						}
-					});
-				}
-			}
-		</script>
+			 function submitForm(e) {
+			 	e.preventDefault();
+
+			 	if(authorized) {
+			 		sendData();
+			 		e.target.reset();
+			 	}
+			 	else {
+			 		gapi.auth.authorize({
+			 			client_id: CLIENT_ID,
+			 			scope: SCOPES,
+			 			immediate: false
+			 		}, 
+			 		function(authResult) {
+			 			if(authResult && !authResult.error) {
+			 				sendData();
+			 				e.target.reset();
+			 			}
+			 		});
+			 	}
+			 }
+			</script>
 
 		</body>
 		<script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
-	</html>
+		</html>
