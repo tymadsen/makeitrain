@@ -261,99 +261,145 @@
 			var SCRIPT_ID = '1nvvvIAakuYuhNyLD66WAFxrFheliZY6F_fKxC246aOmgQohyeiAdILyz';
 
 			var SCOPES = ['https://www.googleapis.com/auth/spreadsheets',
-			'https://www.googleapis.com/auth/userinfo.email'];
+			'email'];
+
+			var userEmail = "";
 
 			var authorized = false;
+			
 			/**
 			 * Check if current user has authorized this application.
 			 */
-			 function checkAuth() {
-			 	gapi.auth.authorize({
-			 		'client_id': CLIENT_ID,
-			 		'scope': SCOPES,
-			 		'immediate': true
-			 	}, handleAuthResult);
-			 }
+			function checkAuth() {
+				gapi.auth.authorize({
+					'client_id': CLIENT_ID,
+					'scope': SCOPES,
+					'immediate': true
+				}, handleAuthResult);
+			}
 
 			/**
 			 * Handle response from authorization server.
 			 *
 			 * @param {Object} authResult Authorization result.
 			 */
-			 function handleAuthResult(authResult) {
-			 	if (authResult && !authResult.error) {
-			 		authorized = true;
-			 	} else {
-			 		console.log(authResult);
-			 		authorized = false;
-			 	}
-			 }
+			function handleAuthResult(authResult) {
+				if (authResult && !authResult.error) {
+					authorized = true;
 
-			 $(document).ready(function() {
-			 	$('#signUpForm').submit(function(e) {
-			 		submitForm(e);
-			 	})
-			 });
+					var op = gapi.client.request({
+						'root': 'https://www.googleapis.com/',
+						'path': 'oauth2/v1/userinfo?alt=json',
+						'method': 'GET'
+					});
 
-			 function sendData() {
 
-			 	var email = document.getElementById("inputEmail").value;
-			 	var zip = document.getElementById("inputZip").value;
-			 	var src = document.getElementById("inputSrc").value;
+					op.execute(function(resp){
+						if(resp.verified_email){
+							console.log(resp.email);
+							var request = {
+								'function': 'isSignedUp',
+								'parameters': [resp.email]
+							};
 
-			 	var request = {
-			 		'function': 'saveData',
-			 		'parameters': [
-			 		email,
-			 		zip,
-			 		src
-			 		]
-			 	};
+							var op2 = gapi.client.request({
+								'root': 'https://script.googleapis.com',
+								'path': 'v1/scripts/' + SCRIPT_ID + ':run',
+								'method': 'POST',
+								'body': request
+							});
 
-			 	var op = gapi.client.request({
-			 		'root': 'https://script.googleapis.com',
-			 		'path': 'v1/scripts/' + SCRIPT_ID + ':run',
-			 		'method': 'POST',
-			 		'body': request
-			 	});
+							op2.execute(handleScriptResp);
 
-			 	op.execute(function(resp){ 
-			 		console.log(resp);
-			 		console.log(resp.response);
+						}
+					});
+				} else {
+					authorized = false;
+				}
+			}
 
-					//TODO: do something with response
-					// if successful change sign up for to a thank you note
-					// else try again
+			function handleScriptResp(resp) {
 
-					if(!resp.error && resp.response.result.message) {
-						$("#signup-reponse").html('<h2>' + resp.response.result.message + '</h2>');
-					}
+				console.log(resp);
+				console.log(resp.response);
+
+				//TODO: do something with response
+				// if successful change sign up for to a thank you note
+				// else try again
+
+				if(!resp.error && resp.response.result && resp.response.result.message) {
+					$("#signup-reponse").html('<h2>' + resp.response.result.message + '</h2>');
+				}
+			}
+
+			$(document).ready(function() {
+				$('#signUpForm').submit(function(e) {
+					submitForm(e);
 				});
-			 }
+			});
 
-			 function submitForm(e) {
-			 	e.preventDefault();
+			function sendData() {
 
-			 	if(authorized) {
-			 		sendData();
-			 		e.target.reset();
-			 	}
-			 	else {
-			 		gapi.auth.authorize({
-			 			client_id: CLIENT_ID,
-			 			scope: SCOPES,
-			 			immediate: false
-			 		}, 
-			 		function(authResult) {
-			 			if(authResult && !authResult.error) {
-			 				sendData();
-			 				e.target.reset();
-			 			}
-			 		});
-			 	}
-			 }
-			</script>
+				var email = document.getElementById("inputEmail").value;
+				var zip = document.getElementById("inputZip").value;
+				var src = document.getElementById("inputSrc").value;
 
-		</body>
-		<script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
-		</html>
+				var op = gapi.client.request({
+					'root': 'https://www.googleapis.com/',
+					'path': 'oauth2/v1/userinfo?alt=json',
+					'method': 'GET'
+				});
+
+				op.execute(function(resp){ 
+
+					if(resp.verified_email) {
+						userEmail = resp.email;
+					}
+					var request = {
+						'function': 'saveData',
+						'parameters': [
+						email,
+						zip,
+						src,
+						userEmail
+						]
+					};
+
+					var op = gapi.client.request({
+						'root': 'https://script.googleapis.com',
+						'path': 'v1/scripts/' + SCRIPT_ID + ':run',
+						'method': 'POST',
+						'body': request
+					});
+
+					op.execute(handleScriptResp);
+				});
+
+			}
+
+			function submitForm(e) {
+				e.preventDefault();
+
+				if(authorized) {
+					sendData();
+					e.target.reset();
+				}
+				else {
+					gapi.auth.authorize({
+						client_id: CLIENT_ID,
+						scope: SCOPES,
+						immediate: false
+					}, 
+					function(authResult) {
+						if(authResult && !authResult.error) {
+							sendData();
+							e.target.reset();
+						}
+					});
+				}
+			}
+		</script>
+
+	</body>
+	<script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
+</html>
